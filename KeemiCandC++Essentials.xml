@@ -178,6 +178,45 @@
         <resource name="raii"/>
       </resourceList>
     </question>
+    <question name="silentlyGeneratedFunction" type="keywordItemMatch">
+      <title>Know what functions C++ silently writes</title>
+      <text>Which functions are silently written by the C++ compiler?</text>
+      <answer explanation="silentlyGeneratedFunction">
+        <answerItem correct="yes">
+          <keyWordList>default, default ctor, default constructor</keyWordList>
+          <text>default constructor</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>copy, copy ctor, copy constructor</keyWordList>
+          <text>copy constructor</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>destructor</keyWordList>
+          <text>destructor</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>cao, copy assignment operator</keyWordList>
+          <text>copy assignment operator</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="uncopyable" type="multipleChoice">
+      <text>What are the intentions of the following class design?"</text>
+      <answer>
+        <mediaList>
+          <media ref="uncopyable.html" type="html"></media>
+        </mediaList>
+        <answerItem correct="yes">
+          <text>allow construction and destruction of derived objects</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>prevent copying of derived objects</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>prevent compiler-generated functions for derived classes</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
@@ -201,9 +240,7 @@
     <explanation name="localStaticObjects">
       <title>Local Static Objects</title>
       <section>
-        <text>
-          C++'s guarantee that local static objects are initialized when the object's definition is first encountered during a call to that function. Then again, any kind of non-const static object - local or non-local - is trouble waiting to happen in the presence of multiple threads.
-        </text>
+        <text>C++'s guarantee that local static objects are initialized when the object's definition is first encountered during a call to that function. Then again, any kind of non-const static object - local or non-local - is trouble waiting to happen in the presence of multiple threads.</text>
         <mediaList>
           <media type="html" ref="localStaticObject.html"></media>
         </mediaList>
@@ -219,12 +256,28 @@
         <text>The rules are easy to follow, but it's important not to confuse assignment with initialization.</text>
       </section>
     </explanation>
+    <explanation name="silentlyGeneratedFunction">
+      <title>Silently written functions</title>
+      <section>
+        <text>A C++ compiler will declare its own version of a copy constructor, a copy assignment operator, and a destructor if they are not declared yet. Furthermore, if you declare no constructors at all, a compiler will also declare a default constructor for you.</text>
+        <mediaList>
+          <media type="html" ref="silentlyGeneratedFunctions.html"></media>
+        </mediaList>
+        <text>These functions are generated only if they are needed.</text>
+      </section>
+    </explanation>
   </explanationList>
   <mediaList>
     <media type="html" ref="virtualDestructor.html" label="Virtual Destructor ~TimeKeeper" showLabelBeforeEvaluated="yes"></media>
     <media type="html" ref="localStaticObject.html" label="local static object" showLabelBeforeEvaluated="yes"></media>
+    <media type="html" ref="silentlyGeneratedFunctions.html" label="Silently written functions" showLabelBeforeEvaluated="yes"></media>
   </mediaList>
   <resourceList>
+    <resource name="scottMeyers" type="book">
+      <title>Effective C++ Third Edition 55 Specific Ways to Improve Your Programs and Designs</title>
+      <text>By Scott Meyers, Publisher: Addison Wesley Professional</text>
+      <link>http://www.aristeia.com/books.html</link>
+    </resource>
     <resource name="raii" type="website">
       <title>More C++ Idioms / Resource Acquisition Is Initialization</title>
       <link>http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Resource_Acquisition_Is_Initialization</link>
