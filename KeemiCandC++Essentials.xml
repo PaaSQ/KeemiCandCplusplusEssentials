@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <info format="1.0">
+    <title>C and C++ Essentials</title>
+    <author>
+      <name>René Kollmorgen</name>
+      <email>rene.kollmorgen@keemimobile.com</email>
+    </author>
+    <publisher>
+      <name>René Kollmorgen</name>
+      <website>www.keemimobile.com</website>
+    </publisher>
+    <cover>
+      <media ref="Cover.jpg" type="image"/>
+    </cover>
+    <download></download>
+    <description>Questions and explanations about the C and C++ programming languages.</description>
+    <language>english</language>
+    <version>0.1</version>
+  </info>
+  <questionList>
+    <question name="virtualDescructors" type="flashcard">
+      <title>Virtual Destructors</title>
+      <text>The rules of thumb using virtual desctructors are?</text>
+      <answer explanation="virtualDescructors">
+        <mediaList>
+          <media type="html" ref="virtualDestructor.html"></media>
+        </mediaList>
+        <answerItem correct="yes">
+          <text>Polymorphic base classes should declare virtual destructors. If a class has any virtual functions, it should have a virtual destructor.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Classes not designed to be base classes or not designed to be used polymorphically should not declare virtual destructors e.g. std::string.</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="virtualDescructorsCallStack" type="singleChoice">
+      <title>Virtual Destructors</title>
+      <text>The way destructors work is that the most derived class's destructor is called first, then the destructor of each base class is called.</text>
+      <answer explanation="virtualDescructors" style="column">
+        <answerItem correct="yes">
+          <text>correct</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>incorrect</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="initObject" type="keywordItemMatch">
+      <title>Object initialization</title>
+      <text>When writing the code to initialize an object think about:</text>
+      <answer explanation="initObject">
+        <answerItem correct="yes">
+          <keyWordList>built-in, built-in types</keyWordList>
+          <text>Manually initialize objects of built-in type, because C++ only sometimes initializes them itself.</text>
+        </answerItem>
+        <answerItem correct="yes" explanation="initMemberLists">
+          <keyWordList>init list, member initialization list</keyWordList>
+          <text>In a constructor, prefer use of the member initialization list to assignment inside the body of the constructor.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>order, declared order, declared, declaration</keyWordList>
+          <text>List data members in the initialization list in the same order they're declared in the class.</text>
+        </answerItem>
+        <answerItem correct="yes" explanation="localStaticObjects">
+          <keyWordList>local static, local static objects</keyWordList>
+          <text>Avoid initialization order problems across translation units by replacing non-local static objects with local static objects.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>copy, copy ctor, copy constructor</keyWordList>
+          <text>For most types, a single call to a copy constructor is more efficient - sometimes much more efficient - than a call to the default constructor followed by a call to the copy assignment operator.</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="staticObjects" type="singleChoice">
+      >
+      <text>Static objects are automatically destroyed when the program exits, i.e., their destructors are automatically called when main finishes executing.</text>
+      <answer style="column">
+        <answerItem correct="yes">
+          <text>correct</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>incorrect</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="memberInitObjectOrder" type="singleChoice">
+      <text>Base classes are initialized before derived classes, and within a class, data members are initialized in the order in which they are declared.</text>
+      <answer style="column">
+        <answerItem correct="yes">
+          <text>correct</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>incorrect</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="globalStaticObjectInitOrder" type="singleChoice">
+      <text>The relative order of initialization of non-local static objects defined in different translation units is undefined.</text>
+      <answer style="column">
+        <answerItem correct="yes">
+          <text>correct</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>incorrect</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="constPointerToNonConstData" type="singleChoice">
+      <title>Use const whenever possible</title>
+      <text>Which line defines a const pointer to non-const data?</text>
+      <answer style="column">
+        <mediaList>
+          <media type="html" ref="const.html"></media>
+        </mediaList>
+        <answerItem correct="no">
+          <text>line 1</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 2</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 3</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>line 4</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 5</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="nonConstPointerConstData" type="singleChoice">
+      <title>Use const whenever possible</title>
+      <text>Which line defines a non-const pointer to const data?</text>
+      <answer style="column">
+        <mediaList>
+          <media type="html" ref="const.html"></media>
+        </mediaList>
+        <answerItem correct="no">
+          <text>line 1</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 2</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>line 3</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 4</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line 5</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="raii" type="singleChoice">
+      <title>RAII (Resource Acquisition Is Initialization)</title>
+      <text>The code snippet shown is a candidate to use RAII. What does this mean?</text>
+      <answer>
+        <mediaList>
+          <media type="html" ref="raii.html"></media>
+        </mediaList>
+        <answerItem correct="no">
+          <text>Do not allocate memory dynamically but on the stack instead.</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>Always initialize memory after acquisition with proper values.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Use a kind of smart pointer e.g. std::auto_ptr to ensure that resources are released before leaving the scope.</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>Implement and use functions which initialize and set resources as a unit.</text>
+        </answerItem>
+      </answer>
+      <resourceList>
+        <resource name="raii"/>
+      </resourceList>
+    </question>
+  </questionList>
+  <explanationList>
+    <explanation name="virtualDescructors">
+      <title>Virtual Destructors</title>
+      <section>
+        <text>Virtual destructors are extremely valuable when some derived classes have specified cleanup code.</text>
+        <text>A practical, easy-to-remember guideline is:</text>
+        <question name="virtualDescructors"/>
+        <mediaList>
+          <media type="html" ref="virtualDestructor.html"></media>
+        </mediaList>
+      </section>
+    </explanation>
+    <explanation name="initMemberLists">
+      <title>Constructor Initialization Lists</title>
+      <section>
+        <text>Constructor initialization lists are used to initialize member objects.</text>
+        <text>All member objects are initialized before the body of the constructor begins executing. Constructor initialization lists allow the class to exercise control over the construction of the member objects before the execution of the constructor.</text>
+      </section>
+    </explanation>
+    <explanation name="localStaticObjects">
+      <title>Local Static Objects</title>
+      <section>
+        <text>
+          C++'s guarantee that local static objects are initialized when the object's definition is first encountered during a call to that function. Then again, any kind of non-const static object - local or non-local - is trouble waiting to happen in the presence of multiple threads.
+        </text>
+        <mediaList>
+          <media type="html" ref="localStaticObject.html"></media>
+        </mediaList>
+      </section>
+    </explanation>
+    <explanation name="initObject">
+      <title>Make sure that objects are initialized before they're used</title>
+      <section>
+        <text>The best way to deal with initialization is to always initialize your objects before you use them. For non-member objects of built-in types, you'll need to do this manually.</text>
+        <text>For almost everything else, the responsibility for initialization falls on constructors. The rule there is simple: make sure that all constructors initialize everything in the object.</text>
+        <text>The general rules of thumbs are:</text>
+        <question name="initObject"/>
+        <text>The rules are easy to follow, but it's important not to confuse assignment with initialization.</text>
+      </section>
+    </explanation>
+  </explanationList>
+  <mediaList>
+    <media type="html" ref="virtualDestructor.html" label="Virtual Destructor ~TimeKeeper" showLabelBeforeEvaluated="yes"></media>
+    <media type="html" ref="localStaticObject.html" label="local static object" showLabelBeforeEvaluated="yes"></media>
+  </mediaList>
+  <resourceList>
+    <resource name="raii" type="website">
+      <title>More C++ Idioms / Resource Acquisition Is Initialization</title>
+      <link>http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Resource_Acquisition_Is_Initialization</link>
+    </resource>
+  </resourceList>
+</catalog>

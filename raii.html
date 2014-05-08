@@ -1,0 +1,30 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">foo</span> ()
+{
+  <span style="color: #333399; font-weight: bold">char</span> <span style="color: #333333">*</span> ch <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">char</span> [<span style="color: #0000DD; font-weight: bold">100</span>];
+  <span style="color: #008800; font-weight: bold">if</span> (...)
+     <span style="color: #008800; font-weight: bold">if</span> (...)
+        <span style="color: #008800; font-weight: bold">return</span>;
+     <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (...)
+            <span style="color: #008800; font-weight: bold">if</span> (...)
+  <span style="color: #008800; font-weight: bold">else</span>
+     <span style="color: #008800; font-weight: bold">throw</span> <span style="background-color: #fff0f0">&quot;ERROR&quot;</span>;
+ 
+  <span style="color: #008800; font-weight: bold">delete</span> [] ch; <span style="color: #888888">// This may not be invoked... memory leak!</span>
+}
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">bar</span> ()
+{
+  lock.acquire();
+  <span style="color: #008800; font-weight: bold">if</span> (...)
+     <span style="color: #008800; font-weight: bold">if</span> (...)
+        <span style="color: #008800; font-weight: bold">return</span>;
+  <span style="color: #008800; font-weight: bold">else</span>
+     <span style="color: #008800; font-weight: bold">throw</span> <span style="background-color: #fff0f0">&quot;ERROR&quot;</span>;
+ 
+  lock.release(); <span style="color: #888888">// This may not be invoked... deadlock!</span>
+}
+</pre></div>
+
+</body>
+</html>
