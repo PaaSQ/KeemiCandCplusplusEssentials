@@ -1,0 +1,45 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Customer</span> {
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	Customer(<span style="color: #008800; font-weight: bold">const</span> Customer<span style="color: #333333">&amp;</span> rhs);
+	Customer<span style="color: #333333">&amp;</span> <span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> Customer<span style="color: #333333">&amp;</span> rhs);
+<span style="color: #997700; font-weight: bold">private:</span>
+	std<span style="color: #333333">::</span>string name;
+
+};
+
+Customer<span style="color: #333333">::</span>Customer(<span style="color: #008800; font-weight: bold">const</span> Customer<span style="color: #333333">&amp;</span> rhs)
+	<span style="color: #333333">:</span> name(rhs.name) {
+}
+
+Customer<span style="color: #333333">&amp;</span> Customer<span style="color: #333333">::</span><span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> Customer<span style="color: #333333">&amp;</span> rhs) {
+	name <span style="color: #333333">=</span> rhs.name;
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">*</span><span style="color: #008800; font-weight: bold">this</span>;
+}
+
+<span style="color: #888888">//</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">PriorityCustomer</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">public</span> Customer {
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	PriorityCustomer(<span style="color: #008800; font-weight: bold">const</span> PriorityCustomer<span style="color: #333333">&amp;</span> rhs);
+	PriorityCustomer<span style="color: #333333">&amp;</span> <span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> PriorityCustomer<span style="color: #333333">&amp;</span> rhs);
+<span style="color: #997700; font-weight: bold">private:</span>
+	<span style="color: #333399; font-weight: bold">int</span> priority;
+
+};
+
+PriorityCustomer<span style="color: #333333">::</span>PriorityCustomer(<span style="color: #008800; font-weight: bold">const</span> PriorityCustomer<span style="color: #333333">&amp;</span> rhs)
+	<span style="color: #333333">:</span> Customer(rhs), priority(rhs.priority) {
+}
+
+PriorityCustomer<span style="color: #333333">&amp;</span> PriorityCustomer<span style="color: #333333">::</span><span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> PriorityCustomer<span style="color: #333333">&amp;</span> rhs) {
+	priority <span style="color: #333333">=</span> rhs.priority;
+	Customer<span style="color: #333333">::</span><span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(rhs); <span style="color: #888888">// assign base class parts</span>
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">*</span><span style="color: #008800; font-weight: bold">this</span>;
+}
+</pre></div>
+
+</body>
+</html>
