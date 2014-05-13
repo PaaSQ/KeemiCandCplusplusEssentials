@@ -1,0 +1,25 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Transaction</span> {        
+
+<span style="color: #997700; font-weight: bold">public:</span>                       
+	Transaction();
+	<span style="color: #008800; font-weight: bold">virtual</span> <span style="color: #333399; font-weight: bold">void</span> logTransaction() <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; 
+};
+
+Transaction<span style="color: #333333">::</span>Transaction() {                                               
+	logTransaction(); 
+}
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">BuyTransaction</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">public</span> Transaction { 
+
+<span style="color: #997700; font-weight: bold">public:</span>
+
+	<span style="color: #008800; font-weight: bold">virtual</span> <span style="color: #333399; font-weight: bold">void</span> logTransaction() <span style="color: #008800; font-weight: bold">const</span>; 
+
+};
+
+<span style="color: #888888">/* ... */</span>
+</pre></div>
+</body>
+</html>

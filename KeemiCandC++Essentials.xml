@@ -292,6 +292,17 @@
         </answerItem>
       </answer>
     </question>
+    <question name="virtualFunctionsInCtorOrDtor" type="flashcard">
+      <text>Look at the code below. What should be the first thought of a C++ developer?</text>
+      <answer>
+        <mediaList>
+          <media type="html" ref="virtualFunctionsInCtorOrDtor.html"></media>
+        </mediaList>
+        <answerItem correct="yes">
+          <text>Don't call virtual functions during construction or destruction, because such calls will never go to a more derived class than that of the currently executing constructor or destructor.</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
