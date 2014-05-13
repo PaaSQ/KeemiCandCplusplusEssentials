@@ -1,0 +1,54 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+ <span style="color: #557799">#include &lt;string&gt;</span>
+ <span style="color: #557799">#include &lt;iostream&gt;</span>
+ 
+ <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Person</span> {
+ 
+ <span style="color: #997700; font-weight: bold">public:</span>                                 
+ 	Person() {
+ 		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Person()&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+	} 
+
+	Person( <span style="color: #008800; font-weight: bold">const</span> std<span style="color: #333333">::</span>string name )
+	<span style="color: #333333">:</span>name_(name) {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Person(&quot;</span> <span style="color: #333333">&lt;&lt;</span> name_ <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;)&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+	} 
+
+	<span style="color: #888888">// Further more usefully constructors ...</span>
+
+	<span style="color: #333333">~</span>Person() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;~Person(&quot;</span> <span style="color: #333333">&lt;&lt;</span> name_ <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;)&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+
+<span style="color: #997700; font-weight: bold">private:</span>
+	std<span style="color: #333333">::</span>string name_;
+};
+
+<span style="color: #888888">//</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Employee</span> {
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	Employee( <span style="color: #008800; font-weight: bold">const</span> Person<span style="color: #333333">&amp;</span> person ) {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Employee()&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+<b>A-></b> 		person_ <span style="color: #333333">=</span> person;
+	}
+
+	<span style="color: #333333">~</span>Employee() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;~Employee()&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+	}
+	
+<span style="color: #997700; font-weight: bold">private:</span>
+<b>B-></b> 	Person person_;
+};
+
+<span style="color: #888888">//</span>
+<span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>(<span style="color: #333399; font-weight: bold">int</span> argc, <span style="color: #333399; font-weight: bold">char</span> <span style="color: #333333">*</span>argv[])
+{
+	Person person( std<span style="color: #333333">::</span>string(<span style="background-color: #fff0f0">&quot;Paul Max&quot;</span>) );
+	Employee employee( person  );
+}
+</pre></div>
+</body>
+</html>

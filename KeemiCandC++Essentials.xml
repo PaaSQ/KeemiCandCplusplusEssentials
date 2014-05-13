@@ -250,6 +250,37 @@
         </answerItem>
       </answer>
     </question>
+    <question name="preferMemberInitLists" type="order">
+      <title>Study the code snippet in the introduction</title>
+      <introduction>
+        <section>
+          <mediaList>
+            <media type="html" ref="preferInitLists.html"></media>
+          </mediaList>
+        </section>
+      </introduction>
+      <text>Order the output of the code snippet properly.</text>
+      <answer explanation="preferMemberInitLists">
+        <answerItem correct="yes">
+          <text>Person(Paul Max)</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Person()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Employee()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>~Employee()</text>
+        </answerItem>
+        <answerItem correct="yes" equalGroupName="destr">
+          <text>~Person(Paul Max)</text>
+        </answerItem>
+        <answerItem correct="yes" equalGroupName="destr">
+          <text>~Person(Paul Max)</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
@@ -298,6 +329,20 @@
           <media type="html" ref="silentlyGeneratedFunctions.html"></media>
         </mediaList>
         <text>These functions are generated only if they are needed.</text>
+      </section>
+    </explanation>
+    <explanation name="preferMemberInitLists">
+      <title>Pefer use of the member initialization list</title>
+      <section>
+        <text>In a constructor, prefer use of the member initialization list to assignment inside the body of the constructor.</text>
+        <text>The following code snippet illustrates unesacarry calls to a default constructor (line A->) and a copy assignment operator function (line B->).</text>
+        <mediaList>
+          <media type="html" ref="preferInitLists.html"></media>
+        </mediaList>
+          <text>The output of the snippets is:
+        </text>
+        <question name="preferMemberInitLists"/>
+        <text>Initializing the member person_ within a member initialization list would call the copy constructor only.</text>
       </section>
     </explanation>
   </explanationList>
