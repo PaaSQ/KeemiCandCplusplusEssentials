@@ -1,6 +1,8 @@
 <html>
 <body>
-  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Uncopyable</span> {
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;string&gt;</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Uncopyable</span> {
 
 <span style="color: #997700; font-weight: bold">protected:</span>                                 
 	Uncopyable() {} 
@@ -11,6 +13,26 @@
 	Uncopyable<span style="color: #333333">&amp;</span> <span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> Uncopyable<span style="color: #333333">&amp;</span>);
 
 };
+
+<span style="color: #888888">//</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Sub</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">public</span> Uncopyable {
+<span style="color: #997700; font-weight: bold">public:</span>
+	Sub( <span style="color: #008800; font-weight: bold">const</span> std<span style="color: #333333">::</span>string<span style="color: #333333">&amp;</span> str)
+		<span style="color: #333333">:</span>str_(str) {
+	}
+	<span style="color: #888888">// ...</span>
+<span style="color: #997700; font-weight: bold">private:</span>
+	std<span style="color: #333333">::</span>string str_;
+};
+
+<span style="color: #888888">//</span>
+<span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>(<span style="color: #333399; font-weight: bold">int</span> argc, <span style="color: #333399; font-weight: bold">char</span> <span style="color: #333333">*</span>argv[])
+{
+	Sub instance1(std<span style="color: #333333">::</span>string(<span style="background-color: #fff0f0">&quot;Hello&quot;</span>));
+	Sub instance2(std<span style="color: #333333">::</span>string(<span style="background-color: #fff0f0">&quot;Hello&quot;</span>));
+	instance1 <span style="color: #333333">=</span> instance2;
+}
 </pre></div>
+
 </body>
 </html>
