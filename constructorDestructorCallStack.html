@@ -1,0 +1,50 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;iostream&gt;</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TimeKeeper</span> {
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	TimeKeeper() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;TimeKeeper()&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+	}
+
+	<span style="color: #008800; font-weight: bold">virtual</span> <span style="color: #333333">~</span>TimeKeeper() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;~TimeKeeper()&quot;</span>  <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+};
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AtomicClock</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">public</span> TimeKeeper {
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	AtomicClock() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;AtomicClock()&quot;</span>  <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+
+	<span style="color: #008800; font-weight: bold">virtual</span> <span style="color: #333333">~</span>AtomicClock() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;~AtomicClock()&quot;</span>  <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+};
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AtomicClockSub</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">public</span> AtomicClock { 
+
+<span style="color: #997700; font-weight: bold">public:</span>
+	AtomicClockSub() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;AtomicClockSub()&quot;</span>  <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+
+	<span style="color: #008800; font-weight: bold">virtual</span> <span style="color: #333333">~</span>AtomicClockSub() {
+		std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;~AtomicClockSub()&quot;</span>  <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;;
+	}
+};
+
+<span style="color: #888888">//</span>
+<span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">main</span>(<span style="color: #333399; font-weight: bold">int</span> argc, <span style="color: #333399; font-weight: bold">char</span> <span style="color: #333333">*</span>argv[])
+{
+	TimeKeeper <span style="color: #333333">*</span>timeKeeper <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> AtomicClockSub();
+	<span style="color: #888888">// ...</span>
+	<span style="color: #008800; font-weight: bold">delete</span> timeKeeper;
+}
+</pre></div>
+</body>
+</html>

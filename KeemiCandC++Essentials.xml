@@ -46,10 +46,41 @@
         </answerItem>
       </answer>
     </question>
+    <question name="constructorDestructorCallStack" type="order">
+      <title>Study the code snippet in the introduction</title>
+      <introduction>
+        <section>
+          <mediaList>
+            <media type="html" ref="constructorDestructorCallStack.html"></media>
+          </mediaList>
+        </section>
+      </introduction>
+      <text>Order the output of the code snippet properly.</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>TimeKeeper()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>AtomicClock()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>AtomicClockSub()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>~AtomicClockSub()</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>~AtomicClock</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>~TimeKeeper()</text>
+        </answerItem>
+      </answer>
+    </question>
     <question name="initObject" type="keywordItemMatch">
       <title>Object initialization</title>
       <text>When writing the code to initialize an object think about:</text>
-      <answer explanation="initObject">
+      <answer explanation="initObject" numberOfVisibleCorrectItems="3">
         <answerItem correct="yes">
           <keyWordList>built-in, built-in types</keyWordList>
           <text>Manually initialize objects of built-in type, because C++ only sometimes initializes them itself.</text>
@@ -68,12 +99,11 @@
         </answerItem>
         <answerItem correct="yes">
           <keyWordList>copy, copy ctor, copy constructor</keyWordList>
-          <text>For most types, a single call to a copy constructor is more efficient - sometimes much more efficient - than a call to the default constructor followed by a call to the copy assignment operator.</text>
+          <text>For most types, a single call to a copy constructor is more efficient than a call to the default constructor followed by a call to the copy assignment operator.</text>
         </answerItem>
       </answer>
     </question>
     <question name="staticObjects" type="singleChoice">
-      >
       <text>Static objects are automatically destroyed when the program exits, i.e., their destructors are automatically called when main finishes executing.</text>
       <answer style="column">
         <answerItem correct="yes">
@@ -228,6 +258,7 @@
         <mediaList>
           <media type="html" ref="virtualDestructor.html"></media>
         </mediaList>
+        <text>If the destructor of the class TimeKeeper were not virtual, the destructors of TimeKepper's sub-classes are never called.</text>
       </section>
     </explanation>
     <explanation name="initMemberLists">
