@@ -306,7 +306,7 @@
     <question name="assignmentToSelf" type="keywordItemMatch">
       <title>Assignment</title>
       <text>Notions to the following code:</text>
-      <answer>
+      <answer explanation="assignmentToSelf">
         <mediaList>
           <media type="html" ref="assignmentToSelf.html"></media>
         </mediaList>
@@ -386,6 +386,19 @@
         </text>
         <question name="preferMemberInitLists"/>
         <text>Initializing the member person_ within a member initialization list would call the copy constructor only.</text>
+      </section>
+    </explanation>
+    <explanation name="assignmentToSelf">
+      <title>Assignment to self</title>
+      <section>
+        <text>The self-assignment problem in the code below is that inside operator=, *this (the target of the assignment) and rhs could be the same object. When they are, the delete not only destroys the bitmap for the current object, it destroys the bitmap for rhs, too. At the end of the function, the Widget — which should not have been changed by the assignment to self — finds itself holding a pointer to a deleted object!</text>
+        <mediaList>
+          <media type="html" ref="assignmentToSelf.html"></media>
+        </mediaList>
+        <text>A better solution for this example is:</text>
+        <mediaList>
+          <media type="html" ref="assignmentToSelfBetterSolution.html"></media>
+        </mediaList>
       </section>
     </explanation>
   </explanationList>

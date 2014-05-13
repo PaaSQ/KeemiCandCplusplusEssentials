@@ -1,0 +1,11 @@
+<html>
+<body>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Widget<span style="color: #333333">&amp;</span> Widget<span style="color: #333333">::</span><span style="color: #008800; font-weight: bold">operator</span><span style="color: #333333">=</span>(<span style="color: #008800; font-weight: bold">const</span> Widget<span style="color: #333333">&amp;</span> rhs)  {
+	Bitmap <span style="color: #333333">*</span>pOrig <span style="color: #333333">=</span> pb;          <span style="color: #888888">// remember original pb</span>
+	pb <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Bitmap(<span style="color: #333333">*</span>rhs.pb);    <span style="color: #888888">// make pb point to a copy of *pb</span>
+	<span style="color: #008800; font-weight: bold">delete</span> pOrig;                <span style="color: #888888">// delete the original pb</span>
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #333333">*</span><span style="color: #008800; font-weight: bold">this</span>;
+}
+</pre></div>
+</body>
+</html>
