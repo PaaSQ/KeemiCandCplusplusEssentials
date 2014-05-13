@@ -303,6 +303,27 @@
         </answerItem>
       </answer>
     </question>
+    <question name="assignmentToSelf" type="keywordItemMatch">
+      <title>Assignment</title>
+      <text>Notions to the following code:</text>
+      <answer>
+        <mediaList>
+          <media type="html" ref="assignmentToSelf.html"></media>
+        </mediaList>
+        <answerItem correct="yes">
+          <keyWordList>self</keyWordList>
+          <text>is unsafe in the presence of assignment to self</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>exception</keyWordList>
+          <text>is not exception-safe</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <keyWordList>this</keyWordList>
+          <text>Have assignment operators return a reference to *this.</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
