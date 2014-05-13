@@ -281,6 +281,17 @@
         </answerItem>
       </answer>
     </question>
+    <question name="exceptionsInDescructors" type="flashcard">
+      <text>The rules of thumb handling exceptions within desctructors?</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>Destructors should never emit exceptions. If functions called in a destructor may throw, the destructor should catch any exceptions, then swallow them or terminate the program.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>If class clients need to be able to react to exceptions thrown during an operation, the class should provide a regular (i.e., non-destructor) function that performs the operation.</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
