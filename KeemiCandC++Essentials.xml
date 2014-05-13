@@ -339,6 +339,18 @@
         </answerItem>
       </answer>
     </question>
+    <question name="storeNewedObjectsInSmartPointersInStandaloneStatements" type="flashcard">
+      <text>When you see code like the code snippet below think about:</text>
+      <answer>
+        <mediaList>
+          <media type="html" ref="storeNewedObjectsInSmartPointersInStandaloneStatements.html"></media>
+          <media type="html" ref="storeNewedObjectsInSmartPointersInStandaloneStatementsBetter.html"></media>
+        </mediaList>
+        <answerItem correct="yes">
+          <text>Store newed objects in smart pointers in standalone statements. Failure to do this can lead to subtle resource leaks when exceptions are thrown.</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="virtualDescructors">
@@ -421,6 +433,7 @@
     <media type="html" ref="virtualDestructor.html" label="Virtual Destructor ~TimeKeeper" showLabelBeforeEvaluated="yes"></media>
     <media type="html" ref="localStaticObject.html" label="local static object" showLabelBeforeEvaluated="yes"></media>
     <media type="html" ref="silentlyGeneratedFunctions.html" label="Silently written functions" showLabelBeforeEvaluated="yes"></media>
+    <media type="html" ref="storeNewedObjectsInSmartPointersInStandaloneStatementsBetter.html" label="Store newed objects in smart pointers in standalone statements" showLabelBeforeEvaluated="yes"></media>
   </mediaList>
   <resourceList>
     <resource name="scottMeyers" type="book">
