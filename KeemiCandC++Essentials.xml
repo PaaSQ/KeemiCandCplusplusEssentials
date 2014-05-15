@@ -402,7 +402,7 @@
       </section>
     </explanation>
     <explanation name="preferMemberInitLists">
-      <title>Pefer use of the member initialization list</title>
+      <title>Prefer use of the member initialization list</title>
       <section>
         <text>In a constructor, prefer use of the member initialization list to assignment inside the body of the constructor.</text>
         <text>The following code snippet illustrates unesacarry calls to a default constructor (line A->) and a copy assignment operator function (line B->).</text>
